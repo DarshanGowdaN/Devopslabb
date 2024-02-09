@@ -1,0 +1,96 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)>  & 'C:\Program Files\Java\jdk-20\bin\java.exe' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\Lenovo\AppData\Roaming\Code\User\workspaceStorage\d0fb9847b31c46538777b7faced531c1\redhat.java\jdt_ws\New folder (12)_85ace8f1\bin' 'demo'
+hello:
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker build -t img1 .
+[+] Building 4.7s (10/10) FINISHED                                                                                                                                docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                        0.1s
+ => => transferring dockerfile: 118B                                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/openjdk:latest                                                                                                           2.5s
+ => [auth] library/openjdk:pull token for registry-1.docker.io                                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                                           0.0s
+ => => transferring context: 2B                                                                                                                                             0.0s 
+ => [1/4] FROM docker.io/library/openjdk:latest@sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f                                                     0.0s 
+ => [internal] load build context                                                                                                                                           0.0s 
+ => => transferring context: 262B                                                                                                                                           0.0s 
+ => CACHED [2/4] WORKDIR /app                                                                                                                                               0.0s 
+ => [3/4] COPY . /app                                                                                                                                                       0.1s 
+ => [4/4] RUN javac demo.java                                                                                                                                               1.7s
+ => exporting to image                                                                                                                                                      0.1s 
+ => => exporting layers                                                                                                                                                     0.1s 
+ => => writing image sha256:e696850c2f925767426f7ac2c748bc5cc753ec17b6bb4441307d633559b0f870                                                                                0.0s 
+ => => naming to docker.io/library/img1                                                                                                                                     0.0s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker run --name img2 img1
+hello:
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker tag img1 darshan2525/old:ver1
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker login
+Authenticating with existing credentials...
+Login Succeeded
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker push darshan2525/old:ver1
+The push refers to repository [docker.io/darshan2525/old]
+c6db084f55a3: Pushed
+f95fbca36b6b: Pushed
+377e198fc438: Layer already exists
+56285d9a7760: Layer already exists
+077bff59ce57: Layer already exists
+9cd9df9ffc97: Layer already exists
+ver1: digest: sha256:cd642fb67b103f7ee9959e800017bc3d3cb2351c3c1d004d2fb548acad46b6ad size: 1574
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker push darshan2525/latest:ver1
+The push refers to repository [docker.io/darshan2525/latest]
+An image does not exist locally with the tag: darshan2525/latest
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker tag img1 darshan2525/latest:ver1
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker login
+Authenticating with existing credentials...
+Login Succeeded
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker push darshan2525/latest:ver1
+The push refers to repository [docker.io/darshan2525/latest]
+c6db084f55a3: Mounted from darshan2525/old
+f95fbca36b6b: Mounted from darshan2525/old
+377e198fc438: Mounted from darshan2525/old
+56285d9a7760: Mounted from darshan2525/old
+077bff59ce57: Mounted from darshan2525/old
+9cd9df9ffc97: Mounted from darshan2525/old
+ver1: digest: sha256:cd642fb67b103f7ee9959e800017bc3d3cb2351c3c1d004d2fb548acad46b6ad size: 1574
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker build -t img3 .
+[+] Building 2.5s (10/10) FINISHED                                                                                                                                docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                        0.0s
+ => => transferring dockerfile: 118B                                                                                                                                        0.0s 
+ => [internal] load metadata for docker.io/library/openjdk:latest                                                                                                           2.4s 
+ => [auth] library/openjdk:pull token for registry-1.docker.io                                                                                                              0.0s 
+ => [internal] load .dockerignore                                                                                                                                           0.0s
+ => => transferring context: 2B                                                                                                                                             0.0s 
+ => [1/4] FROM docker.io/library/openjdk:latest@sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f                                                     0.0s 
+ => [internal] load build context                                                                                                                                           0.0s 
+ => => transferring context: 59B                                                                                                                                            0.0s 
+ => CACHED [2/4] WORKDIR /app                                                                                                                                               0.0s 
+ => CACHED [3/4] COPY . /app                                                                                                                                                0.0s 
+ => CACHED [4/4] RUN javac demo.java                                                                                                                                        0.0s 
+ => exporting to image                                                                                                                                                      0.0s 
+ => => exporting layers                                                                                                                                                     0.0s 
+ => => writing image sha256:e696850c2f925767426f7ac2c748bc5cc753ec17b6bb4441307d633559b0f870                                                                                0.0s 
+ => => naming to docker.io/library/img3                                                                                                                                     0.0s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker run --name pic img3
+hello:
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker tag img3 darshan2525/new1:v2
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker login
+Authenticating with existing credentials...
+Login Succeeded
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> docker push darshan2525/new1:v2
+The push refers to repository [docker.io/darshan2525/new1]
+c6db084f55a3: Mounted from darshan2525/latest
+f95fbca36b6b: Mounted from darshan2525/latest
+377e198fc438: Mounted from darshan2525/latest
+56285d9a7760: Mounted from darshan2525/latest
+077bff59ce57: Mounted from darshan2525/latest
+9cd9df9ffc97: Mounted from darshan2525/latest
+v2: digest: sha256:cd642fb67b103f7ee9959e800017bc3d3cb2351c3c1d004d2fb548acad46b6ad size: 1574
+PS C:\Users\Lenovo\OneDrive\Desktop\New folder (12)> 
