@@ -1,0 +1,60 @@
+Microsoft Windows [Version 10.0.22631.3007]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Lenovo>docker run -it mysql /bin/bash
+bash-4.4# mysql -h 172.17.0.2 -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show schemas;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.05 sec)
+
+mysql> create database studentinfo;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> use student info
+ERROR 1049 (42000): Unknown database 'student'
+mysql> use studentinfo;
+Database changed
+mysql> create table student(name varchar(7),id int, branch varchar(10));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into studentinfo values("darshan",28,"CSE");
+ERROR 1146 (42S02): Table 'studentinfo.studentinfo' doesn't exist
+mysql> insert into student values("darshan",28,"CSE");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select *from student;
++---------+------+--------+
+| name    | id   | branch |
++---------+------+--------+
+| darshan |   28 | CSE    |
++---------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> show schemas;
+ERROR 2013 (HY000): Lost connection to MySQL server during query
+No connection. Trying to reconnect...
+ERROR 2003 (HY000): Can't connect to MySQL server on '172.17.0.2:3306' (113)
+ERROR:
+Can't connect to the server
+
+mysql>
