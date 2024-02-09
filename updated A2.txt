@@ -1,0 +1,123 @@
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (main)
+$ git init
+Initialized empty Git repository in C:/Users/Lenovo/OneDrive/Desktop/New folder (5)/.git/
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git config --> global user.email "darshagowda141@gmail.com"
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git remote add origin "https://github.com/DarshanGowdaN/ccc.git"
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git add .
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git commit -m "qqq"
+[master (root-commit) 619e3c9] qqq
+ 2 files changed, 1 insertion(+)
+ create mode 100644 1.txt
+ create mode 100644 global
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 251 bytes | 251.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/DarshanGowdaN/ccc.git
+ * [new branch]      master -> master
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch1)
+$ nono 2.txt
+bash: nono: command not found
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch1)
+$ nano 2.txt
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch1)
+$ git add .
+warning: in the working copy of '2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch1)
+$ git commit -m "www"
+[branch1 1eef58c] www
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch1)
+$ git switch master
+Switched to branch 'master'
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git checkout -b branch2
+Switched to a new branch 'branch2'
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch2)
+$ nano 2.txt
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch2)
+$ git add .
+warning: in the working copy of '2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch2)
+$ git commit -m "rrr"
+[branch2 601d66f] rrr
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (branch2)
+$ git switch master
+Switched to branch 'master'
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git merge branch1
+Updating 619e3c9..1eef58c
+Fast-forward
+ 2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master)
+$ git merge branch2
+Auto-merging 2.txt
+CONFLICT (add/add): Merge conflict in 2.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master|MERGING)
+$ git push origin branch1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 294.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/DarshanGowdaN/ccc/pull/new/branch1
+remote:
+To https://github.com/DarshanGowdaN/ccc.git
+ * [new branch]      branch1 -> branch1
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master|MERGING)
+$ git push origin branch2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 296 bytes | 296.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/DarshanGowdaN/ccc/pull/new/branch2
+remote:
+To https://github.com/DarshanGowdaN/ccc.git
+ * [new branch]      branch2 -> branch2
+
+Lenovo@DESKTOP-833R2H0 MINGW64 ~/OneDrive/Desktop/New folder (5) (master|MERGING)
